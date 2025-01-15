@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM Maths Brevet Blanc</title>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+    </html></title>
+    <script>
+        function checkAnswer(question, correctAnswer, explanation) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            const result = document.getElementById(`result-${question}`);
+
+            if (!userAnswer) {
+                result.textContent = "Veuillez sélectionner une réponse.";
+                result.style.color = "orange";
+                return;
+            }
+
+            if (userAnswer.value === correctAnswer) {
+                result.textContent = "Bonne réponse !";
+                result.style.color = "green";
+            } else {
+                result.textContent = `Mauvaise réponse. ${explanation}`;
+                result.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>UTILISER LA CALCULATRICE ! </h1>
+    <form>
+    
+        <h1>QCM Maths Brevet Blanc</h1>
+    <form>
+
+        <!-- trigonométrie -->
+        <h1>Exercice de Trigonométrie</h1>
+    <p>Dans un triangle rectangle ABC (A étant l'angle droit), l'angle (B) mesure 30° et l'hypoténuse BC mesure 10 cm. Quelle est la longueur du côté opposé AB ?</p>
+
+    <svg width="300" height="200">
+        <!-- Triangle -->
+        <polygon points="50,150 250,150 50,50" style="fill:none;stroke:black;stroke-width:2" />
+        <!-- Labels -->
+        <text x="40" y="145" fill="black">A</text>
+        <text x="250" y="145" fill="black">C</text>
+        <text x="45" y="45" fill="black">B</text>
+        <text x="150" y="160" fill="black">10 cm</text>
+    </svg>
+
+    <form>
+        <label><input type="radio" name="q1" value="1"> a) 5 cm</label><br>
+        <label><input type="radio" name="q1" value="2"> b) 10 cm</label><br>
+        <label><input type="radio" name="q1" value="3"> c) 3√3 cm</label><br>
+        <button type="button" onclick="checkAnswer('q1', '1', 'La bonne réponse est 5 cm, car sin(30°) = AB / BC. Donc AB = BC × sin(30°) = 10 × 1/2 = 5 cm.')">Vérifier</button>
+        <p id="result-q1"></p>
+
+       <!-- pythagore -->
+        <h1>Exercice de Pythagore</h1>
+        <p>Dans un triangle rectangle ABC (A étant l'angle droit), les longueurs des côtés AB et AC sont respectivement 3 cm et 4 cm. Quelle est la longueur de l'hypoténuse BC ?</p>
+    
+        <svg width="300" height="200">
+            <!-- Triangle -->
+            <polygon points="50,150 250,150 50,50" style="fill:none;stroke:black;stroke-width:2" />
+            <!-- Labels -->
+            <text x="40" y="145" fill="black">A</text>
+            <text x="250" y="145" fill="black">C</text>
+            <text x="45" y="45" fill="black">B</text>
+            <text x="150" y="160" fill="black">4 cm</text>
+            <text x="20" y="100" fill="black">3 cm</text>
+        </svg>
+    
+        <form>
+            <label><input type="radio" name="q1" value="1"> a) 5 cm</label><br>
+            <label><input type="radio" name="q1" value="2"> b) 6 cm</label><br>
+            <label><input type="radio" name="q1" value="3"> c) 7 cm</label><br>
+            <button type="button" onclick="checkAnswer('q1', '1', 'La bonne réponse est 5 cm. Selon le théorème de Pythagore, BC² = AB² + AC². Donc BC² = 3² + 4² = 9 + 16 = 25, d’où BC = √25 = 5 cm.')">Vérifier</button>
+            <p id="result-q1"></p>
+        
+           <!-- pythagore récyproque -->
+
+            <h1>Exercice sur la Réciproque de Pythagore</h1>
+    <p>Un triangle a pour côtés les longueurs suivantes : 5 cm, 12 cm et 13 cm. Ce triangle est-il rectangle ?</p>
+
+    <form>
+        <label><input type="radio" name="q1" value="1"> a) Oui</label><br>
+        <label><input type="radio" name="q1" value="2"> b) Non</label><br>
+        <button type="button" onclick="checkAnswer('q1', '1', 'La bonne réponse est Oui. Selon la réciproque du théorème de Pythagore, un triangle est rectangle si le carré du plus grand côté est égal à la somme des carrés des deux autres côtés. Ici : 13² = 169 et 5² + 12² = 25 + 144 = 169. Donc, le triangle est rectangle.')">Vérifier</button>
+        <p id="result-q1"></p>
+            
+            <!-- Fonctions linéaires avec tableau -->
+        <h2>Fonctions linéaires avec tableau</h2>
+        <p>2. Complétez le tableau de valeurs pour la fonction f(x) = 2x :</p>
+        <table border="1">
+            <tr>
+                <th>x</th>
+                <th>-2</th>
+                <th>-1</th>
+                <th>0</th>
+                <th>1</th>
+                <th>2</th>
+            </tr>
+            <tr>
+                <th>f(x)</th>
+                <td><input type="text" name="q2a" id="q2a" size="5"></td>
+                <td><input type="text" name="q2b" id="q2b" size="5"></td>
+                <td><input type="text" name="q2c" id="q2c" size="5"></td>
+                <td><input type="text" name="q2d" id="q2d" size="5"></td>
+                <td><input type="text" name="q2e" id="q2e" size="5"></td>
+            </tr>
+        </table>
+        <button type="button" onclick="
+            let correct = (q2a.value == '-4' && q2b.value == '-2' && q2c.value == '0' && q2d.value == '2' && q2e.value == '4');
+            let result = document.getElementById('result-q2');
+            if (correct) {
+                result.textContent = 'Bonne réponse !';
+                result.style.color = 'green';
+            } else {
+                result.textContent = 'Mauvaise réponse. f(x) = 2x, donc les valeurs sont -4, -2, 0, 2 et 4.';
+                result.style.color = 'red';
+            }
+        ">Vérifier</button>
+        <p id="result-q2"></p>
+
+        <!-- fonction linéaires graphique -->
+        <h1>Exercice de Fonctions Linéaires</h1>
+        <p>La fonction linéaire \( f(x) = 2x \) est représentée par une droite sur le graphique ci-dessous. Quelle est l'ordonnée du point où la droite coupe l'axe des ordonnées ?</p>
+    
+        <svg width="400" height="400" style="border:1px solid black">
+            <!-- Axes -->
+            <line x1="50" y1="200" x2="350" y2="200" style="stroke:black;stroke-width:2" /> <!-- Axe x -->
+            <line x1="200" y1="50" x2="200" y2="350" style="stroke:black;stroke-width:2" /> <!-- Axe y -->
+    
+            <!-- Graduation x -->
+            <text x="90" y="220" fill="black">-2</text>
+            <text x="140" y="220" fill="black">-1</text>
+            <text x="250" y="220" fill="black">1</text>
+            <text x="300" y="220" fill="black">2</text>
+    
+            <!-- Graduation y -->
+            <text x="180" y="105" fill="black">4</text>
+            <text x="180" y="155" fill="black">2</text>
+            <text x="180" y="250" fill="black">-2</text>
+    
+            <!-- Fonction -->
+            <line x1="50" y1="350" x2="350" y2="50" style="stroke:blue;stroke-width:2" />
+        </svg>
+    
+        <form>
+            <label><input type="radio" name="q1" value="1"> a) 0</label><br>
+            <label><input type="radio" name="q1" value="2"> b) 2</label><br>
+            <label><input type="radio" name="q1" value="3"> c) -2</label><br>
+            <button type="button" onclick="checkAnswer('q1', '1', 'La bonne réponse est 0, car pour une fonction linéaire de la forme f(x) = ax, la droite passe toujours par l’origine (0,0).')">Vérifier</button>
+            <p id="result-q1"></p>
+
+        <!-- Calcul littéral -->
+        <h2>Calcul littéral</h2>
+        <p>3. Simplifiez l'expression : 4x + 7x - 3x</p>
+        <label><input type="radio" name="q3" value="1"> a) 8x</label><br>
+        <label><input type="radio" name="q3" value="2"> b) 12x</label><br>
+        <label><input type="radio" name="q3" value="3"> c) 10x</label><br>
+        <button type="button" onclick="checkAnswer('q3', '1', 'La bonne réponse est 8x, car 4x + 7x - 3x = 8x.')">Vérifier</button>
+        <p id="result-q3"></p>
+
+        <!--factorisé-->
+        <p>4. Développez et simplifiez : (x + 2)(x - 3)</p>
+        <label><input type="radio" name="q4" value="1"> a) x² - x - 6</label><br>
+        <label><input type="radio" name="q4" value="2"> b) x² + 5x - 6</label><br>
+        <label><input type="radio" name="q4" value="3"> c) x² - 6x + 6</label><br>
+        <button type="button" onclick="checkAnswer('q4', '1', 'La bonne réponse est x² - x - 6, car (x + 2)(x - 3) = x² - 3x + 2x - 6.')">Vérifier</button>
+        <p id="result-q4"></p>
+
+        <!-- Calcul littéraux -->
+        <h1>Exercice de Calcul Littéral</h1>
+        <p>Simplifiez et factorisez l'expression suivante : \( 4x + 12 \)</p>
+    
+        <form>
+            <label><input type="radio" name="q1" value="1"> a) \( 4(x + 3) \)</label><br>
+            <label><input type="radio" name="q1" value="2"> b) \( 2(2x + 6) \)</label><br>
+            <label><input type="radio" name="q1" value="3"> c) \( 4x + 12 \)</label><br>
+            <button type="button" onclick="checkAnswer('q1', '1', 'La bonne réponse est 4(x + 3), car 4 est un facteur commun de 4x et 12. En le mettant en facteur, on obtient 4(x + 3).')">Vérifier</button>
+            <p id="result-q1"></p>
+    
+            <!-- probabilités -->
+            
+            <h1>Exercice de Probabilités</h1>
+            <p>Un sac contient 3 boules rouges, 2 boules bleues et 1 boule verte. Si l'on tire une boule au hasard, quelle est la probabilité de tirer une boule rouge ?</p>
+        
+            <form>
+                <label><input type="radio" name="q1" value="1"> a) \( \frac{1}{6} \)</label><br>
+                <label><input type="radio" name="q1" value="2"> b) \( \frac{1}{2} \)</label><br>
+                <label><input type="radio" name="q1" value="3"> c) \( \frac{1}{3} \)</label><br>
+                <label><input type="radio" name="q1" value="4"> d) \( \frac{1}{4} \)</label><br>
+                <button type="button" onclick="checkAnswer('q1', '2', 'La bonne réponse est \( \frac{1}{2} \). Il y a 3 boules rouges sur un total de 6 boules, donc la probabilité est \( \frac{3}{6} = \frac{1}{2} \).')">Vérifier</button>
+                <p id="result-q1"></p>
+
+                <!-- programation -->
+                
+                <h1>Exercice de Programmation</h1>
+                <p>Voici un extrait de programme en Python :</p>
+            
+                <pre>
+                def somme(a, b):
+                    return a + b
+            
+                x = 5
+                y = 3
+                resultat = somme(x, y)
+                print(resultat)
+                </pre>
+            
+                <p>Que va afficher ce programme ?</p>
+            
+                <form>
+                    <label><input type="radio" name="q1" value="1"> a) 15</label><br>
+                    <label><input type="radio" name="q1" value="2"> b) 8</label><br>
+                    <label><input type="radio" name="q1" value="3"> c) 53</label><br>
+                    <label><input type="radio" name="q1" value="4"> d) Une erreur</label><br>
+                    <button type="button" onclick="checkAnswer('q1', '2', 'La bonne réponse est 8. La fonction somme(a, b) retourne la somme des deux paramètres. Ici, x = 5 et y = 3, donc somme(x, y) = 5 + 3 = 8.')">Vérifier</button>
+                    <p id="result-q1"></p>
+   
+            </form>
+</body>
+</html>
+
